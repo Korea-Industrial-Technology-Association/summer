@@ -1,0 +1,35 @@
+{
+  "name": "koita-summer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KOITA Summer Forum Management System",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:all": "concurrently \"pnpm run dev:backend\" \"pnpm run dev:frontend\"",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "type-check": "turbo run type-check",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "dev:backend": "pnpm --filter backend dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:shared": "pnpm --filter @koita/shared dev",
+    "build:backend": "pnpm --filter backend build",
+    "build:frontend": "pnpm --filter frontend build",
+    "build:shared": "pnpm --filter @koita/shared build",
+    "generate:types": "pnpm --filter @koita/api-client generate"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "turbo": "^1.11.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.12.1"
+}
