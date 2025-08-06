@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: summer
+      POSTGRES_DB: summer
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
