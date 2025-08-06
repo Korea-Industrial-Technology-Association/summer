@@ -19,7 +19,7 @@ out/
 
 # App-specific environment files
 apps/**/.env
-apps/**/.env.local  
+apps/**/.env.local
 apps/**/.env.production
 apps/**/.env.development
 
@@ -104,3 +104,6 @@ Thumbs.db
 
 # Turbo
 .turbo
+
+# DB
+db-data
