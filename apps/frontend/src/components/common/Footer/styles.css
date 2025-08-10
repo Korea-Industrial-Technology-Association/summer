@@ -1,0 +1,63 @@
+.Footer {
+  width: 100%;
+  height: 233px;
+  background-color: #252525;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.Footer .footer_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Footer .footer_wrapper .left_child {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 60px;
+  margin-right: 100px;
+}
+
+.Footer .right_child {
+  box-sizing: border-box;
+}
+
+.Footer .right_child .right_child {
+  color: rgba(255, 255, 255, 0.6);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Footer .right_child .left_child {
+  color: #fff000;
+  display: flex;
+  flex-direction: row; /* column → row로 변경 */
+  justify-content: space-between; /* 추가 */
+  width: 100%; /* 추가 */
+  margin-top: 10px; /* 추가 */
+}
+
+.Footer .right_child a {
+  color: white;
+}
+
+.Footer p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 850px) {
+  .Footer .footer_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
