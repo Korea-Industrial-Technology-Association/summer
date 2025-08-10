@@ -1,0 +1,92 @@
+.Header {
+  height: 80px;
+  padding: 20px;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Header .left_child {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 240px;
+  height: 80px;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.Header .right_child {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.Header .right_child ul {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.Header .right_child .menu {
+  list-style: none;
+}
+
+.Header .right_child .menu li {
+  float: left;
+  margin-right: 30px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.Header .right_child .menu li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.Header .right_child .menu li a:hover {
+  color: rgb(255, 143, 17);
+}
+
+.Header .right_child .menu_hamburger {
+  background-color: rgb(255, 143, 17);
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media (max-width: 850px) {
+  .Header {
+    padding: 20px;
+    background-color: transparent;
+  }
+
+  .Header .right_child .menu_hamburger {
+    background-color: transparent;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Header .right_child ul {
+    display: none;
+  }
+
+  .Header .right_child .menu li {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

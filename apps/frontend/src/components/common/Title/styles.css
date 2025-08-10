@@ -1,0 +1,19 @@
+.main-container-title_box {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+}
+
+.main-container-title_box .main-container-title_text {
+  width: 100%;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+}
