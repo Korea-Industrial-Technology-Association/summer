@@ -1,126 +1,182 @@
 .Dropdown {
   position: absolute;
-  top: 80px;
+  top: 100%;
   right: 0;
-  width: 250px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  background: white;
+  border-radius: 8px 0 8px 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  min-width: 250px;
+  z-index: 1000;
+  border: 1px solid #e5e7eb;
+
+  /* 위에서 아래로 펼쳐지는 애니메이션 */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  z-index: 1000;
+  transform: translateY(-15px) scaleY(0.8);
+  transform-origin: top center;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* 최대 높이 제한과 스크롤 */
+  max-height: 0;
+  overflow: hidden;
 }
 
 .Dropdown.open {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0) scaleY(1);
+  max-height: 500px; /* 충분히 큰 값 */
+}
+
+/* 드롭다운 아이템들도 순차적으로 나타나게 */
+.dropdown-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  transition-delay: 0ms;
+}
+
+.Dropdown.open .dropdown-item {
+  opacity: 1;
   transform: translateY(0);
 }
 
+.Dropdown.open .dropdown-item:nth-child(1) { transition-delay: 50ms; }
+.Dropdown.open .dropdown-item:nth-child(2) { transition-delay: 100ms; }
+.Dropdown.open .dropdown-item:nth-child(3) { transition-delay: 150ms; }
+.Dropdown.open .dropdown-item:nth-child(4) { transition-delay: 200ms; }
+.Dropdown.open .dropdown-item:nth-child(5) { transition-delay: 250ms; }
+.Dropdown.open .dropdown-item:nth-child(6) { transition-delay: 300ms; }
+.Dropdown.open .dropdown-item:nth-child(7) { transition-delay: 350ms; }
+.Dropdown.open .dropdown-item:nth-child(8) { transition-delay: 400ms; }
+.Dropdown.open .dropdown-item:nth-child(9) { transition-delay: 450ms; }
+.Dropdown.open .dropdown-item:nth-child(10) { transition-delay: 500ms; }
+.Dropdown.open .dropdown-item:nth-child(11) { transition-delay: 550ms; }
+
 .dropdown-header {
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: flex-end;
-  border-radius: 8px 8px 0 0;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  color: #666;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.2s;
-}
-
-.close-button:hover {
-  background-color: #f0f0f0;
-  color: #333;
+  display: none; /* 데스크톱에서는 X 버튼 숨김 */
 }
 
 .dropdown-menu {
   list-style: none;
-  padding: 8px 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown-item {
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.dropdown-item:last-child {
-  border-bottom: none;
+  padding: 10px 0;
 }
 
 .dropdown-item a {
   display: block;
-  padding: 14px 16px;
-  color: #333;
+  padding: 12px 20px;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  transition: background-color 0.2s;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
   white-space: nowrap;
-  text-align: left;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .dropdown-item a:hover {
-  background-color: #f8f9fa;
+  background: #f8f9fa;
   color: rgb(255, 143, 17);
+  border-left-color: rgb(255, 143, 17);
 }
 
-/* 햄버거 버튼 스타일 */
-.hamburger-button {
-  background: none;
-  border: none;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
+/* 드롭다운이 열릴 때 배경 클릭으로 닫기 위한 오버레이 */
+.dropdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: transparent;
 }
 
-.hamburger-button span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #333;
-  transition: all 0.3s ease;
-  border-radius: 1px;
-}
-
-.hamburger-button.open span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.hamburger-button.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-button.open span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* 모바일에서 드롭다운 조정 */
+/* 모바일에서는 전체 화면 슬라이드 */
 @media (max-width: 850px) {
   .Dropdown {
-    width: 250px;
-    right: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 80vw;
+    border-radius: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    /* 모바일에서는 오른쪽에서 슬라이드 */
+    transform: translateX(100%);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .Dropdown.open {
+    transform: translateX(0);
+    max-height: 100vh;
+  }
+
+  /* 모바일에서는 순차 애니메이션 비활성화 */
+  .dropdown-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+
+  .dropdown-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .close-button:hover {
+    background: #f5f5f5;
+    color: #333;
+  }
+
+  .dropdown-menu {
+    padding: 20px 0;
+  }
+
+  .dropdown-item a {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+}
+
+/* 모바일에서 배경 오버레이 */
+@media (max-width: 850px) {
+  .dropdown-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .dropdown-overlay.show {
+    opacity: 1;
+  }
+}
+
+/* 데스크톱에서 배경 오버레이 */
+@media (min-width: 851px) {
+  .dropdown-overlay {
+    display: none;
   }
 }
