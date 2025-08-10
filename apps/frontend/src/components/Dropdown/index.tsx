@@ -50,7 +50,7 @@ const Dropdown = ({ isOpen, onClose }: DropdownProps) => {
         <ul className="dropdown-menu">
           {DROPDOWN_MENU_ITEMS.map((item, index) => (
             <li key={index} className="dropdown-item">
-              <Link to={item.path} onClick={onClose}>
+              <Link to={`/${item.path}`} onClick={onClose}>
                 {item.name}
               </Link>
             </li>

@@ -5,7 +5,6 @@ import Layout from "./components/common/Layout";
 import Home from "./pages/Home";
 import Forums from "./pages/Forums";
 import Notice from "./pages/Notice";
-import Events from "./pages/Events";
 import Programs from "./pages/Programs";
 import Lectures from "./pages/Lectures";
 import Gallery from "./pages/Gallery";
@@ -14,6 +13,7 @@ import MyRegistration from "./pages/MyRegistration";
 import Feedback from "./pages/Feedback";
 import VenueGuide from "./pages/VenueGuide";
 import FAQ from "./pages/FAQ";
+import Events from "./pages/Events";
 
 import "./App.css";
 

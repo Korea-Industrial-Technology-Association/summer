@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Table from "../components/common/Table";
+import {Table} from "../../components/common";
+
 
 interface NoticeItem {
   id: number;
@@ -10,6 +11,7 @@ interface NoticeItem {
 }
 
 const Notice = () => {
+  // TODO: 백엔드에서 가져올 데이터
   const [notices] = useState<NoticeItem[]>([
     {
       id: 1,
