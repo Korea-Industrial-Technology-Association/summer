@@ -1,0 +1,160 @@
+.programs-container {
+  width: 100%;
+}
+
+.date-tabs {
+  display: flex;
+  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.date-tab {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.date-tab:hover {
+  color: rgb(255, 143, 17);
+}
+
+.date-tab.active {
+  color: rgb(255, 143, 17);
+  border-bottom-color: rgb(255, 143, 17);
+}
+
+.programs-content {
+  width: 100%;
+}
+
+.date-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.programs-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.program-card {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.program-image {
+  flex: 1;
+  min-height: 200px;
+  background: #f3f4f6;
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.program-info {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.program-header {
+  margin-bottom: 20px;
+}
+
+.program-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(255, 143, 17);
+  margin: 0 0 8px 0;
+}
+
+.program-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+.program-detail {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.program-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.price-note {
+  font-size: 12px;
+  color: #666;
+  margin: 8px 0 0 0;
+  font-style: italic;
+}
+
+.no-programs {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .date-tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .program-card {
+    flex-direction: column;
+  }
+
+  .program-image {
+    min-height: 150px;
+  }
+
+  .program-info {
+    padding: 20px;
+  }
+
+  .program-title {
+    font-size: 20px;
+  }
+
+  .program-subtitle {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,121 @@
+.events-container {
+  width: 100%;
+}
+
+.date-tabs {
+  display: flex;
+  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.date-tab {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.date-tab:hover {
+  color: rgb(255, 143, 17);
+}
+
+.date-tab.active {
+  color: rgb(255, 143, 17);
+  border-bottom-color: rgb(255, 143, 17);
+}
+
+.events-content {
+  width: 100%;
+}
+
+.date-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-item {
+  display: flex;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid rgb(255, 143, 17);
+}
+
+.event-time {
+  min-width: 140px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.event-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.event-type {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgb(255, 143, 17);
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.event-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.event-speaker {
+  font-size: 14px;
+  color: #666;
+}
+
+.no-events {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .date-tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .event-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .event-time {
+    min-width: auto;
+    margin-bottom: 10px;
+  }
+
+  .event-details {
+    margin-left: 0;
+  }
+}

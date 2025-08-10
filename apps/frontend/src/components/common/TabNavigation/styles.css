@@ -1,56 +1,63 @@
+/* 탭 네비게이션 전체 컨테이너 */
 .tab-navigation {
-  display: flex;
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 30px;
+  display: flex;           /* 탭들을 가로로 나열 */
+  border-bottom: 1px solid #e0e0e0;  /* 하단에 구분선 추가 */
+  margin-bottom: 30px;     /* 아래쪽 여백 */
 }
 
+/* 각 탭 버튼의 기본 스타일 */
 .tab-button {
-  background: none;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #666;
-  cursor: pointer;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
-  position: relative;
+  background: none;        /* 배경색 제거 */
+  border: none;           /* 기본 버튼 테두리 제거 */
+  padding: 12px 20px;     /* 내부 여백 (위아래 12px, 좌우 20px) */
+  font-size: 16px;        /* 글자 크기 */
+  font-weight: 500;       /* 글자 굵기 (medium) */
+  color: #666;            /* 기본 글자색 (회색) */
+  cursor: pointer;        /* 마우스 오버시 손가락 모양 */
+  border-bottom: 3px solid transparent;  /* 하단에 투명한 테두리 (활성화시 색상 변경용) */
+  transition: all 0.3s ease;  /* 모든 속성 변화를 0.3초간 부드럽게 */
+  position: relative;     /* 자식 요소 위치 조정을 위한 기준점 */
 }
 
+/* 탭에 마우스를 올렸을 때 */
 .tab-button:hover {
-  color: #ff8f11;
+  color: #ff8f11;         /* 글자색을 오렌지로 변경 */
 }
 
+/* 활성화된 탭의 스타일 */
 .tab-button.active {
-  color: #ff8f11;
-  border-bottom-color: #ff8f11;
+  color: #ff8f11;         /* 글자색을 오렌지로 변경 */
+  border-bottom-color: #ff8f11;  /* 하단 테두리도 오렌지로 변경 */
 }
 
+/* 탭 옆에 표시되는 카운트 숫자 (예: "(5)") */
 .tab-count {
-  margin-left: 4px;
-  font-size: 14px;
-  color: #999;
+  margin-left: 4px;       /* 탭 텍스트와 4px 간격 */
+  font-size: 14px;        /* 글자 크기 (탭보다 작게) */
+  color: #999;            /* 연한 회색 */
 }
 
+/* 활성화된 탭의 카운트 숫자도 오렌지로 */
 .tab-button.active .tab-count {
   color: #ff8f11;
 }
 
-/* 반응형 */
+/* 모바일 화면 대응 (768px 이하) */
 @media (max-width: 768px) {
   .tab-navigation {
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    overflow-x: auto;      /* 탭이 많으면 가로 스크롤 가능 */
+    scrollbar-width: none; /* Firefox: 스크롤바 숨김 */
+    -ms-overflow-style: none; /* IE: 스크롤바 숨김 */
   }
   
+  /* Chrome, Safari: 스크롤바 숨김 */
   .tab-navigation::-webkit-scrollbar {
     display: none;
   }
   
   .tab-button {
-    white-space: nowrap;
-    padding: 12px 16px;
-    font-size: 14px;
+    white-space: nowrap;   /* 텍스트 줄바꿈 금지 (스크롤 가능하도록) */
+    padding: 12px 16px;    /* 좌우 여백을 줄임 */
+    font-size: 14px;       /* 글자 크기 축소 */
   }
 }
