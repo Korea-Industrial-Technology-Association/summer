@@ -1,0 +1,77 @@
+.my-registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 70px 240px 160px;
+}
+
+.my-registration-container .my-registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 640px;
+}
+
+.my-registration-container .my-registration-form .form-group {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-registration-container .my-registration-form input {
+  max-width: 500px;
+  margin: 16px;
+  padding: 15px 3px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.my-registration-container .my-registration-form input:focus {
+  outline: none;
+}
+
+.my-registration-container .my-registration-title {
+  border-bottom: 1px solid #222;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 16px;
+  margin: 20px 0px;
+  width: 100%;
+}
+
+/* 오른쪽 끝 선에 정렬 (위 input 기준) */
+.my-registration-container .my-registration-form .form-group span {
+  width: 100%;
+  max-width: 500px;
+  margin: 16px;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  color: #4B5EAA;
+}
+
+.my-registration-container .my-registration-form button {
+  width: 40%;
+  padding: 15px 3px;
+  border: none;
+  border-radius: 10px;
+  background-color: #222;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.my-registration-container .my-registration-form button:hover {
+  background-color: whitesmoke;
+  transition-duration: 300ms;
+  color: black;
+}

@@ -1,7 +1,8 @@
 import "./styles.css";
 
-const Feedback = () => {
-  return <div className="feedback-container">Feedback</div>;
+const Forum = () => {
+  return <div className="forum-container">
+  </div>;
 }
 
-export default Feedback;
+export default Forum;
