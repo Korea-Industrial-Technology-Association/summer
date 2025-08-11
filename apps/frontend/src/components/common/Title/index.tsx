@@ -18,7 +18,9 @@ const Title = ({
   return (
     <div className="title-container">
       <div className="title-main">
-        <h1 className="page-title">{title}</h1>
+        <h1 className="page-title">{
+          title
+        }</h1>
 
         {showYearFilter && (
           <div className="year-filter">

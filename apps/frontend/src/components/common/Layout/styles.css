@@ -91,6 +91,10 @@
 
 .page-content {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 반응형 디자인 */

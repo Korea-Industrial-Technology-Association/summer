@@ -1,7 +1,7 @@
 import "./styles.css";
 
-const Feedback = () => {
-  return <div className="feedback-container">Feedback</div>;
+const Gallery = () => {
+  return <div className="gallery-container">Gallery</div>;
 }
 
-export default Feedback;
+export default Gallery;

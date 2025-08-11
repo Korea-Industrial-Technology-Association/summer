@@ -1,0 +1,5 @@
+/* notices-container가 page-content의 전체 너비를 채우도록 설정 */
+.notices-container {
+  width: 100%;
+  align-self: stretch; /* flex 아이템이 부모의 전체 너비를 차지 */
+}

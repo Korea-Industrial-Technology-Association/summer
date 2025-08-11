@@ -7,20 +7,19 @@ interface LayoutProps {
   children: React.ReactNode;
   title: string;
   showYearFilter?: boolean;
-  yearFilterValue?: string;
   onYearChange?: (year: string) => void;
 }
 
 const Layout = ({
-  children,
-  title,
-  showYearFilter = false,
-  yearFilterValue = "2025년",
-  onYearChange
-}: LayoutProps) => {
+                  children,
+                  title,
+                  showYearFilter = false,
+                  onYearChange
+                }: LayoutProps) => {
+  const yearFilterValue = new Date().getFullYear() + "년"; // 현재 연도를 기본값으로 설정
   return (
     <div className="Layout">
-      <Header />
+      <Header/>
 
       {/* Hero Section - 모든 페이지 공통 */}
       <section className="hero-section">
@@ -49,7 +48,7 @@ const Layout = ({
         </div>
       </main>
 
-      <Footer />
+      <Footer/>
     </div>
   );
 };
