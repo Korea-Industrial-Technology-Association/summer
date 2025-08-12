@@ -2,6 +2,8 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Title from "../Title";
 import "./styles.css";
+import {useNavigate} from "react-router-dom";
+import React from "react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,6 +19,14 @@ const Layout = ({
                   onYearChange
                 }: LayoutProps) => {
   const yearFilterValue = new Date().getFullYear() + "년"; // 현재 연도를 기본값으로 설정
+  const navigate = useNavigate();
+  const onClickRegistration = () => {
+    navigate("/registration");
+  }
+  const onClickMyRegistration = () => {
+    navigate("/my-registration");
+  }
+
   return (
     <div className="Layout">
       <Header/>
@@ -25,13 +35,16 @@ const Layout = ({
       <section className="hero-section">
         <div className="hero-content">
           <div className="action-buttons">
-            <button className="action-button primary">참가신청</button>
-            <button className="action-button secondary">신청내역/수정</button>
+            <button className="action-button primary" onClick={onClickRegistration}>
+              참가신청
+            </button>
+            <button className="action-button secondary" onClick={onClickMyRegistration}>신청내역/수정</button>
           </div>
         </div>
       </section>
 
-      {/* Main Content Area */}
+      {/* Main Content Area */
+      }
       <main className="main-container">
         <div className="content-wrapper">
           <Title
@@ -50,7 +63,8 @@ const Layout = ({
 
       <Footer/>
     </div>
-  );
+  )
+    ;
 };
 
 export default Layout;
