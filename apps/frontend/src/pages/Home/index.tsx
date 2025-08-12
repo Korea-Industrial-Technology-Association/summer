@@ -7,12 +7,10 @@ import CustomPrevArrow from "../../components/Arrow/CustomPrevArrow.tsx";
 import CustomNextArrow from "../../components/Arrow/CustomNextArrow.tsx";
 import {useNavigate} from "react-router-dom";
 
-const speakerSettings = {
+const baseSettings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
-  slidesToScroll: 3,
   prevArrow: <CustomPrevArrow/>,
   nextArrow: <CustomNextArrow/>,
   responsive: [
@@ -26,24 +24,17 @@ const speakerSettings = {
     }
   ]
 }
+
+const speakerSettings = {
+  ...baseSettings,
+  slidesToShow: 5,
+  slidesToScroll: 3,
+}
+
 const gallerySettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
+  ...baseSettings,
   slidesToShow: 3,
   slidesToScroll: 3,
-  prevArrow: <CustomPrevArrow/>,
-  nextArrow: <CustomNextArrow/>,
-  responsive: [
-    {
-      breakpoint: 760,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true
-      }
-    }
-  ]
 }
 
 const Home = () => {

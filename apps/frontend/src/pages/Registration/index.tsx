@@ -71,7 +71,7 @@ const Registration = () => {
       <section className="registration-check-wrap">
         {terms.map((term, index) => (
           <CheckBox
-            key={index}
+            key={term.type}
             title={term.title}
             must={term.must}
             description={term.description}
