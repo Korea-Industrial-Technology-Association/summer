@@ -1,0 +1,41 @@
+.custom-arrow {
+  width: 60px !important;
+  height: 120px !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
+  font-size: 24px !important;
+  color: white !important;
+  font-weight: bold !important;
+  position: absolute !important;
+  transform: none !important;
+  transition: background 0.3s ease !important;
+}
+
+.custom-arrow:hover {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Speaker section arrows - 세로 중앙 */
+.speaker-section .custom-arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Gallery section arrows - 세로 중앙 */
+.gallery-section .custom-arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.custom-prev {
+  left: 0 !important;
+}
+
+.custom-next {
+  right: 0 !important;
+}

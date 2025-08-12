@@ -1,0 +1,36 @@
+.checkbox-wrapper {
+  padding-bottom: 30px;
+}
+
+.checkbox-wrapper h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.checkbox-wrapper h3 span{
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 10px;
+  color: red;
+}
+
+.checkbox-wrapper .checkbox-term-wrapper {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.checkbox-wrapper .checkbox-term-wrapper .checkbox-description li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.checkbox-wrapper .checkbox-label .checkbox-custom {
+  margin-left: 10px;
+  color: #333;
+  font-size: 13px;
+}
