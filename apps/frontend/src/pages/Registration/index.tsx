@@ -1,6 +1,6 @@
 import "./styles.css";
 import CheckBox from "../../components/common/CheckBox";
-import {type ChangeEvent, useEffect, useState} from "react";
+import {type ChangeEvent, useCallback, useEffect, useState} from "react";
 import {Button} from "../../components/common";
 
 const Registration = () => {
@@ -19,10 +19,14 @@ const Registration = () => {
     })
   }
 
+  const handleCheckChange = useCallback((key: keyof typeof checkedStates) => (isChecked: boolean) => {
+    setCheckedStates(prev => ({...prev, [key]: isChecked}));
+  }, []);
   useEffect(() => {
     const allChecked = Object.values(checkedStates).every(Boolean);
     setIsAllChecked(allChecked);
   }, [checkedStates]);
+
 
   const terms = [
     {
@@ -33,8 +37,8 @@ const Registration = () => {
         "개인정보 수집항목 : 회사명, 성명, 직위, 주민번호, 연락처(휴대전화, 이메일, 팩스 등)",
         "개인정보 보유기간 : 포럼종료 후 정산 완료시 까지(2025년 8월)",
       ],
+      type: "collection",
       checked: checkedStates.collection,
-      onChange: (isChecked: boolean) => setCheckedStates(prev => ({...prev, collection: isChecked})),
     },
     {
       title: "고유 식별번호 수집 및 이용에 대한 동의",
@@ -42,8 +46,8 @@ const Registration = () => {
       description: [
         "수집하는 고유 식별번호 항목 및 이용목적: 주민등록번호(여행자 보험 가입목적)",
       ],
+      type: "identification",
       checked: checkedStates.identification,
-      onChange: (isChecked: boolean) => setCheckedStates(prev => ({...prev, identification: isChecked})),
     },
     {
       title: "개인정보 제3자 제공 동의",
@@ -51,8 +55,8 @@ const Registration = () => {
       description: [
         "위 수집/이용항목은 「제31회 KOITA 기술경영인 하계포럼」지정호텔인 롯데호텔제주(제주도 서귀포시 중문관광로 72번길 35), 지정여행사인 ㈜무크투어(서울시 마포구 마포대로 19 1층 2호), 행사대행사 이스터마케팅서비스㈜(서울시 중구 동호로 20길 6 아세아빌딩 503호)에 제공하여 수집/이용 목적에 따라 사용하는데 동의합니다.",
       ],
+      type: "thirdParty",
       checked: checkedStates.thirdParty,
-      onChange: (isChecked: boolean) => setCheckedStates(prev => ({...prev, thirdParty: isChecked})),
     }
   ]
 
@@ -72,7 +76,7 @@ const Registration = () => {
             must={term.must}
             description={term.description}
             checked={term.checked}
-            onChange={term.onChange}
+            onChange={handleCheckChange(term.type as keyof typeof checkedStates)}
           />
         ))}
         <label className="all-check-label">
