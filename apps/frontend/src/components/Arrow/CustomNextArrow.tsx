@@ -5,9 +5,9 @@ interface CustomNextArrowProps {
 }
 
 const CustomNextArrow = (props: CustomNextArrowProps) => {
-  return (<div className="custom-arrow custom-next" onClick={props.onClick}>
+  return (<button className="custom-arrow custom-next" onClick={props.onClick}>
     ›
-  </div>)
+  </button>)
 }
 
 export default CustomNextArrow;

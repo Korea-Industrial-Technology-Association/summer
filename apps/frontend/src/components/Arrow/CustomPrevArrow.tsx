@@ -5,9 +5,9 @@ interface CustomPrevArrowProps {
 }
 
 const CustomPrevArrow = (props: CustomPrevArrowProps) => {
-  return (<div className="custom-arrow custom-prev" onClick={props.onClick}>
+  return (<button className="custom-arrow custom-prev" onClick={props.onClick}>
     ‹
-  </div>)
+  </button>)
 }
 
 export default CustomPrevArrow;
